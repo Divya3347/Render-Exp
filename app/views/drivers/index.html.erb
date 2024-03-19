@@ -6,7 +6,9 @@
     <%= f.search_field :name_or_car_or_color_cont , placeholder:"Name"%>
     <%= f.submit%>
 <% end %>
-<%= link_to "Recycle Bin", trash_path , class:"btn btn-primary"%>
+<%= link_to trash_path do %>
+    <%= image_tag "https://cdn-icons-png.flaticon.com/128/7844/7844035.png" , size:"30x30"%>
+<% end %>
 </div>
 </div>
 <br>
