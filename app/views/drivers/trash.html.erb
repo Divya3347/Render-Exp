@@ -1,0 +1,15 @@
+<% if @driver.present? %>
+<h1> Deleted Driver List </h1>
+<% @driver.each do |driver|%>
+    Name :  <%= driver.name %><br>
+    Car : <%= driver.car %><br>
+    Car Number : <%= driver.color %><br>
+    <%= link_to "Restore" ,  restore_driver_path(driver) %><br>
+    <%= link_to "Permanant Delete" , driver_path(driver) , data:{
+        turbo_method: :delete,
+        turbo_confirm:"Are you sure?"
+    }%><br><br>
+<% end %>
+<% else %>
+<h1> Not any driver in deleted list </h1>
+<% end %>

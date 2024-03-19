@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <title> Warning Your Details is deleted </title>
+  </head>
+  <body>
+    <h1>Warning, <%= @driver.name %> your Details is deleted.</h1>
+    <p>
+      Your details is deleted , the details are :
+    </p>
+    <p>
+      your car is <b><%= @driver.car %></b>.
+    </p>
+    <p>
+     The number of car is <b><%= @driver.cnum%></b>.
+    </p>
+    <p>
+     The color of car is <b><%= @driver.color%></b>.
+    </p>
+    <p>Thanks for beign with us!</p>
+    <%= image_tag 'https://image.cnbcfm.com/api/v1/image/105427259-1535730447635gettyimages-810877128.jpeg?v=1535730503&w=1920&h=1080',size:"800x400"%><br><br>
+  </body>
+</html>

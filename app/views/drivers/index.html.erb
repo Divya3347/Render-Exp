@@ -1,0 +1,51 @@
+<div class="navbar">
+<h1 style="text-align:center">Car Owner List</h1>
+<%= link_to "New Car Owner Register", new_driver_path, class:"btn btn-primary" %>
+<%= link_to "Export CSV", drivers_path(format: 'csv') , class:"btn btn-primary"%>
+<%= search_form_for @q do |f|%>
+    <%= f.search_field :name_or_car_or_color_cont , placeholder:"Name"%>
+    <%= f.submit%>
+<% end %>
+<%= link_to "Recycle Bin", trash_path , class:"btn btn-primary"%>
+</div>
+</div>
+<br>
+<table class="table table-bordered table-hover text-center">
+    <tr>
+      <th><%= sort_link(@q, :name, default_order: :desc) %></th>
+      <th><%= sort_link(@q, :email) %></th>
+      <th><%= sort_link(@q, :age) %></th>
+      <th><%= sort_link(@q, :gender) %></th>
+      <th><%= sort_link(@q, :marry) %></th>
+      <th><%= sort_link(@q, :car) %></th>
+      <th><%= sort_link(@q, :cnum) %></th>
+      <th><%= sort_link(@q, :color) %></th>
+      <th colspan=4> Actions </th>
+    </tr>
+
+    <% @drivers.each do |driver|%>
+        <tr>
+            <td> <%= driver.name %> </td>
+            <td> <%= driver.email %> </td>
+            <td> <%= driver.age %> </td>
+            <td> <%= driver.gender %> </td>
+            <td> <%= driver.marry %> </td>
+            <td> <%= driver.car %> </td>
+            <td> <%= driver.cnum %> </td>
+            <td> <%= driver.color %> </td>
+            <td> <%= link_to "Download PDF",download_pdf_driver_path(driver),class:"btn btn-secondary btn-sm"%></td>
+            <td> <%= link_to "Show" , driver_path(driver) , class:"btn btn-primary btn-sm"%> </td>
+            <td> <%= link_to "Edit" , edit_driver_path(driver) , class:"btn btn-warning btn-sm"%> </td>
+            <td><%= button_to "Delete", driver, method: :delete , class:"btn btn-danger btn-sm" %></td>
+        </tr>
+    <% end %>
+</table><br>
+<div class="pagination justify-content-center">
+<%= paginate @drivers %>
+</div><br>
+
+<!--
+<%= image_tag "download.jpeg"%><br>
+<%= video_tag("video.mp4",poster:"download.jpeg",autoplay: true,autobuffer: true,controls: true,size:"500x250") %><br>
+<%= audio_tag("audio.mp3", autoplay: true, controls: true) %>
+-->

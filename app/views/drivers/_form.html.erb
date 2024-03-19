@@ -1,0 +1,30 @@
+<%= form_with model: @driver do |f|%>
+    <%= f.label :name,"Name : "%>
+    <%= f.text_field :name,placeholder:"Enter the Name"%><br><br>
+
+    <%= f.label :email,"Email : "%>
+    <%= f.text_field :email,placeholder:"Enter the email"%><br><br>
+
+    <%= f.label :age,"Age : "%>
+    <%= f.number_field :age,placeholder:"Enter the age"%><br><br>
+
+    <%= f.label :gender,"Gender : "%>
+    <%= f.radio_button :gender ,"Male"%> Male
+    <%= f.radio_button :gender ,"Female"%> Female <br><br>
+
+    <%= f.label :marry,"Married Status : "%>
+    <%= f.radio_button :marry ,"Single" %> Single
+    <%= f.radio_button :marry ,"Married"%> Married
+    <%= f.radio_button :marry ,"Divorced"%> Divorced <br><br>
+
+    <%= f.label :car,"Car : "%>
+    <%= f.text_field :car,placeholder:"Enter the Car name"%><br><br>
+
+    <%= f.label :cnum,"Car Number : "%>
+    <%= f.text_field :cnum,placeholder:"Enter the Car number"%><br><br>
+
+    <%= f.label :color,"Car Color : "%>
+    <%= f.text_field :color,placeholder:"Enter the Car Color"%><br><br>
+
+    <%= f.submit "Save Driver"%>
+<% end %>

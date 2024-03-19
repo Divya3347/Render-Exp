@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Car World, <%= @driver.name %></h1>
+    <p>
+      You have successfully Register your Car.
+    </p>
+    <p>
+      your car is <b><%= @driver.car %></b>.
+    </p>
+    <p>
+     The number of car is <b><%= @driver.cnum%></b>.
+    </p>
+    <p>
+     The color of car is <b><%= @driver.color%></b>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+    <%= image_tag 'https://image.cnbcfm.com/api/v1/image/105427259-1535730447635gettyimages-810877128.jpeg?v=1535730503&w=1920&h=1080',size:"800x400"%><br><br>
+  </body>
+</html>
